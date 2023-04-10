@@ -24,6 +24,19 @@ class Plugin extends PluginBase
                 'label' => 'yamobile.services::lang.details.name',
                 'url' => Backend::url('yamobile/services/services'),
                 'icon' => 'icon-folder',
+                'sideMenu' => [
+                    'Side-Menu-Services'=> [
+                        'label' => 'Услуги',
+                        'url' => Backend::url('yamobile/services/services'),
+                        'icon' => 'icon-sitemap'
+                    ],
+                    'Side-Menu-Subservices' => [
+                        'label' => 'Подуслуги',
+                        'url' => Backend::url('yamobile/services/subservices'),
+                        'icon' => 'icon-list'
+                    ]
+
+                ]
             ],
         ];
     }
