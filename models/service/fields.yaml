@@ -1,0 +1,19 @@
+fields:
+  id:
+    label: yamobile.leadtracker::lang.lead.id
+    required: 0
+    type: number
+    span: auto
+    disabled: 1
+  name:
+    label: yamobile.leadtracker::lang.services.name.title
+    placeholder: yamobile.leadtracker::lang.services.name.placeholder
+    required: 0
+    type: text
+    span: auto
+  description:
+    label: yamobile.leadtracker::lang.services.description.title
+    placeholder: yamobile.leadtracker::lang.services.description.placeholder
+    required: 0
+    type: text
+    span: auto
