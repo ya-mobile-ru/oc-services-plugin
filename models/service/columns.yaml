@@ -1,0 +1,10 @@
+columns:
+    id:
+        label: 'yamobile.leadtracker::lang.lead.id'
+        required: '0'
+        type: number
+        span: auto
+        disabled: '1'
+    name:
+        label: name
+        type: text
