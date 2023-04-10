@@ -11,7 +11,7 @@ class Plugin extends PluginBase
         return [
             'name' => 'yamobile.services::lang.plugin.name',
             'description' => 'yamobile.services::lang.plugin.description',
-            'author' => 'Yamobile',
+            'author' => 'yamobile.services::lang.plugin.author',
             'icon' => 'icon-folder',
             'homepage' => 'https://github.com/ya-mobile-ru/oc-services-plugin',
         ];
