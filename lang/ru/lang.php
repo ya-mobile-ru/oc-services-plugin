@@ -8,5 +8,16 @@
         'name' => 'Услуги',
 
 
+    ],
+    'services'=>[
+        'name'=>[
+            'title'=>'Название',
+            'placeholder'=>'',
+        ],
+        'description'=>[
+            'title'=>'Краткое описание',
+            'placeholder'=>'',
+        ]
+
     ]
 ];
