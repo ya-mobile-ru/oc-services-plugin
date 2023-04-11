@@ -2,6 +2,6 @@ name: Услуги
 modelClass: Yamobile\Services\Models\Service
 form: $/yamobile/services/models/service/fields.yaml
 defaultRedirect: yamobile/services/services
-create: {  }
-update: {  }
-preview: {  }
+create:
+    redirect: 'yamobile/services/services/update/:id'
+    redirectClose: yamobile/services/services
