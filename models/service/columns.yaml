@@ -1,0 +1,22 @@
+columns:
+    id:
+        label: 'yamobile.services::lang.services.id.title'
+        required: '0'
+        type: number
+        span: auto
+        disabled: '1'
+    name:
+        label: 'yamobile.services::lang.services.name.title'
+        required: '0'
+        type: text
+        span: auto
+        disabled: '0'
+    image_url:
+        label: image_url
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime

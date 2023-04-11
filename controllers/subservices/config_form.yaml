@@ -1,0 +1,10 @@
+name: Subservices
+form: $/yamobile/services/models/subservice/fields.yaml
+modelClass: Yamobile\Services\Models\Subservice
+defaultRedirect: yamobile/services/subservices
+create:
+    redirect: 'yamobile/services/subservices/update/:id'
+    redirectClose: yamobile/services/subservices
+update:
+    redirect: yamobile/services/subservices
+    redirectClose: yamobile/services/subservices

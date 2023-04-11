@@ -1,0 +1,33 @@
+fields:
+    id:
+        label: Id
+        span: auto
+        type: number
+    meta_title:
+        label: 'Meta title'
+        span: auto
+        type: text
+    meta_description:
+        label: 'Meta description'
+        span: auto
+        type: text
+    meta_keywords:
+        label: 'Meta keywords'
+        span: auto
+        type: textarea
+    name:
+        label: Name
+        span: auto
+        type: text
+    content:
+        label: Content
+        span: auto
+        type: textarea
+    image_url:
+        label: 'Image url'
+        span: auto
+        type: text
+    category_id:
+        label: 'Category id'
+        span: auto
+        type: number

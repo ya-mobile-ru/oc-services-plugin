@@ -1,0 +1,20 @@
+plugin:
+    name: 'yamobile.services::lang.plugin.name'
+    description: 'yamobile.services::lang.plugin.description'
+    author: 'yamobile.services::lang.plugin.author'
+    icon: icon-folder
+    homepage: 'https://github.com/ya-mobile-ru/oc-services-plugin'
+navigation:
+    services-menu:
+        label: 'yamobile.services::lang.details.name'
+        url: yamobile/services/services
+        icon: icon-folder
+        sideMenu:
+            side-menu-services:
+                label: Услуги
+                url: yamobile/services/services
+                icon: icon-sitemap
+            side-menu-subservices:
+                label: Подуслуги
+                url: yamobile/services/subservices
+                icon: icon-list
