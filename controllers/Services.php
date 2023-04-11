@@ -19,7 +19,6 @@ class Services extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Yamobile.Services', 'Services', 'Side-Menu-Services');
-        BackendMenu::setContext('Yamobile.Services', 'Services', 'Side-Menu-Subservices');
+        BackendMenu::setContext('Yamobile.Services', 'services-menu');
     }
 }
