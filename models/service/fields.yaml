@@ -1,19 +1,49 @@
 fields:
-  id:
-    label: yamobile.leadtracker::lang.lead.id
-    required: 0
-    type: number
-    span: auto
-    disabled: 1
-  name:
-    label: yamobile.leadtracker::lang.services.name.title
-    placeholder: yamobile.leadtracker::lang.services.name.placeholder
-    required: 0
-    type: text
-    span: auto
-  description:
-    label: yamobile.leadtracker::lang.services.description.title
-    placeholder: yamobile.leadtracker::lang.services.description.placeholder
-    required: 0
-    type: text
-    span: auto
+    id:
+        label: 'yamobile.services::lang.services.id.title'
+        span: auto
+        disabled: 1
+        required: 0
+        type: number
+    name:
+        label: 'yamobile.services::lang.services.name.title'
+        span: auto
+        placeholder: 'yamobile.services::lang.services.name.placeholder'
+        required: 0
+        type: text
+tabs:
+    fields:
+        image_url:
+            label: Картинка
+            mode: image
+            span: auto
+            type: mediafinder
+            tab: Основное
+        description:
+            label: 'yamobile.services::lang.services.description.title'
+            span: auto
+            placeholder: 'yamobile.services::lang.services.description.placeholder'
+            required: 0
+            type: text
+            tab: Основное
+        content:
+            type: richeditor
+            toolbarButtons: bold|italic
+            size: huge
+            span: auto
+            tab: Основное
+        meta_title:
+            label: 'Meta Title'
+            span: auto
+            type: text
+            tab: Meta-тэги
+        meta_description:
+            label: 'Meta Описание'
+            span: auto
+            type: text
+            tab: Meta-тэги
+        meta_keywords:
+            label: 'Ключевые слова'
+            span: auto
+            type: text
+            tab: Meta-тэги
