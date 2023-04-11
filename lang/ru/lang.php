@@ -10,13 +10,16 @@
 
     ],
     'services'=>[
+        'id' =>[
+          'title' => 'Идентификатор'
+        ],
         'name'=>[
             'title'=>'Название',
-            'placeholder'=>'',
+            'placeholder'=>'Название',
         ],
         'description'=>[
             'title'=>'Краткое описание',
-            'placeholder'=>'',
+            'placeholder'=>'Краткое описание',
         ]
 
     ]
