@@ -1,49 +1,53 @@
 fields:
     id:
-        label: 'yamobile.services::lang.services.id.title'
+        label: 'yamobile.services::lang.services.id.label'
         span: auto
         disabled: 1
         required: 0
         type: number
     name:
-        label: 'yamobile.services::lang.services.name.title'
-        span: auto
+        label: 'yamobile.services::lang.services.name.label'
         placeholder: 'yamobile.services::lang.services.name.placeholder'
+        span: auto
         required: 0
         type: text
 tabs:
     fields:
         image_url:
-            label: Картинка
+            label: 'yamobile.services::lang.services.image.label'
             mode: image
             span: auto
+            imageWidth: '200'
             type: mediafinder
-            tab: Основное
+            tab: 'yamobile.services::lang.tabs.main'
         description:
-            label: 'yamobile.services::lang.services.description.title'
-            span: auto
+            label: 'yamobile.services::lang.services.description.label'
             placeholder: 'yamobile.services::lang.services.description.placeholder'
+            span: auto
             required: 0
             type: text
-            tab: Основное
+            tab: 'yamobile.services::lang.tabs.main'
         content:
+            label: 'yamobile.services::lang.services.content.label'
+            size: giant
+            span: full
             type: richeditor
-            toolbarButtons: bold|italic
-            size: huge
-            span: auto
-            tab: Основное
+            tab: 'yamobile.services::lang.tabs.main'
         meta_title:
-            label: 'Meta Title'
+            label: 'yamobile.services::lang.services.meta.title.label'
+            placeholder: 'yamobile.services::lang.services.meta.title.placeholder'
             span: auto
             type: text
-            tab: Meta-тэги
+            tab: 'yamobile.services::lang.tabs.meta'
         meta_description:
-            label: 'Meta Описание'
+            label: 'yamobile.services::lang.services.meta.description.label'
+            placeholder: 'yamobile.services::lang.services.meta.description.placeholder'
             span: auto
             type: text
-            tab: Meta-тэги
+            tab: 'yamobile.services::lang.tabs.meta'
         meta_keywords:
-            label: 'Ключевые слова'
+            label: 'yamobile.services::lang.services.meta.keywords.label'
+            placeholder: 'yamobile.services::lang.services.meta.keywords.placeholder'
             span: auto
             type: text
-            tab: Meta-тэги
+            tab: 'yamobile.services::lang.tabs.meta'
