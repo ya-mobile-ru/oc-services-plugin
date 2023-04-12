@@ -13,7 +13,7 @@ fields:
         type: text
 tabs:
     fields:
-        image_url:
+        image:
             label: 'yamobile.services::lang.services.image.label'
             mode: image
             span: auto

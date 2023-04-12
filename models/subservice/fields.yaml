@@ -11,7 +11,7 @@ tabs:
             span: auto
             type: text
             tab: 'yamobile.services::lang.tabs.main'
-        image_url:
+        image:
             label: Картинка
             mode: image
             span: auto
