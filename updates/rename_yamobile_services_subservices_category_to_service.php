@@ -5,7 +5,7 @@ namespace Yamobile\Services\Updates;
 use October\Rain\Database\Updates\Migration;
 use Schema;
 
-class RenameYamobileServicesSubservices extends Migration
+class RenameYamobileServicesSubservicesCategoryToServices extends Migration
 {
     public function up()
     {
