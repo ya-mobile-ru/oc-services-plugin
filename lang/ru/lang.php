@@ -7,19 +7,48 @@
     'details'=> [
         'name' => 'Услуги',
 
-
+    ],
+    'tabs' => [
+        'main' => 'Основное',
+        'meta' => 'Мета-данные'
     ],
     'services'=>[
         'id' =>[
-          'title' => 'Идентификатор'
+          'label' => 'Идентификатор'
         ],
         'name'=>[
-            'title'=>'Название',
+            'label'=>'Название',
             'placeholder'=>'Название',
         ],
         'description'=>[
-            'title'=>'Краткое описание',
+            'label'=>'Краткое описание',
             'placeholder'=>'Краткое описание',
+        ],
+        'image' =>[
+            'label' => 'Изображение'
+        ],
+        'content' =>[
+            'label' => 'Контент'
+        ],
+        'meta' => [
+            'title' => [
+                'label'=> 'Meta Заголовок',
+                'placeholder' => ''
+            ],
+            'description' => [
+                'label' => 'Meta Описание',
+                'placeholder' => ''
+            ],
+            'keywords' => [
+                'label' => 'Meta Ключевые слова',
+                'placeholder' => ''
+            ]
+        ],
+        'created_at' => 'Дата создания',
+        'updated_at' => 'Дата обновления',
+        'breadcrumb' => [
+            'index' => 'Услуги',
+            'update' => 'Редактирование услуги'
         ]
 
     ]
