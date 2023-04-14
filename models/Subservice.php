@@ -18,6 +18,12 @@ class Subservice extends Model
      */
     public $table = 'yamobile_services_subservice';
 
+
+    public $belongsTo = [
+        'service' => \Yamobile\Services\Models\Service::class,
+    ];
+
+
     /**
      * @var array Validation rules
      */

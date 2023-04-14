@@ -1,5 +1,15 @@
 1.0.1:
     - Initialize plugin.
 1.0.5:
+  - Added plugin menu display
+  - Added the ability to create services and sub-services
   - create_yamobile_services_services.php
   - create_yamobile_services_subservices.php
+2.0.0:
+  - Added the ability to link sub-services to services
+  - Changed the display of images in the list of services and sub-services
+  - Fixed incorrectly name bd columns for picture
+  - Fixed incorrectly name bd columns for link services
+  - rename_yamobile_services_subservices_category_to_service.php
+  - rename_yamobile_services_services_imageurl_to_image.php
+  - rename_yamobile_services_subservices_imageurl_to_image.php
