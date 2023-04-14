@@ -6,15 +6,15 @@ plugin:
     homepage: 'https://github.com/ya-mobile-ru/oc-services-plugin'
 navigation:
     services-menu:
-        label: 'yamobile.services::lang.details.name'
+        label: 'yamobile.services::lang.navigation.service_menu'
         url: yamobile/services/services
         icon: icon-folder
         sideMenu:
             side-menu-services:
-                label: Услуги
+                label: 'yamobile.services::lang.navigation.side_menu_services'
                 url: yamobile/services/services
                 icon: icon-sitemap
             side-menu-subservices:
-                label: Подуслуги
+                label: 'yamobile.services::lang.navigation.side_menu_subservices'
                 url: yamobile/services/subservices
                 icon: icon-list

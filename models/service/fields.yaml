@@ -1,15 +1,25 @@
 fields:
     id:
         label: 'yamobile.services::lang.services.id.label'
-        span: auto
-        disabled: 1
-        required: 0
+        span: full
+        disabled: 0
+        required: 1
+        readOnly: 1
         type: number
     name:
         label: 'yamobile.services::lang.services.name.label'
-        placeholder: 'yamobile.services::lang.services.name.placeholder'
         span: auto
+        placeholder: 'yamobile.services::lang.services.name.placeholder'
+        required: 1
+        type: text
+    slug:
+        label: 'yamobile.services::lang.services.slug.label'
+        span: auto
+        disabled: 0
         required: 0
+        preset:
+            field: name
+            type: slug
         type: text
 tabs:
     fields:

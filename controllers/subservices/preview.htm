@@ -1,7 +1,7 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('yamobile/services/subservices') ?>">Subservices</a></li>
-        <li><?= e($this->pageTitle) ?></li>
+        <li><a href="<?= Backend::url('yamobile/services/subservices') ?>"><?= e(trans('yamobile.services::lang.breadcrumb.subservices.index')) ?></a></li>
+        <li><?= e(trans('yamobile.services::lang.breadcrumb.subservices.preview')) ?></li>
     </ul>
 <?php Block::endPut() ?>
 
