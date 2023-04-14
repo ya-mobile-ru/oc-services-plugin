@@ -2,32 +2,44 @@ fields:
     id:
         label: Id
         span: auto
+        readOnly: 1
+        hidden: 0
+        required: 1
         type: number
+    service:
+        label: 'yamobile.services::lang.services.service.label'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+        tab: 'yamobile.services::lang.tabs.main'
+    name:
+        label: 'yamobile.services::lang.services.name.label'
+        span: auto
+        placeholder: 'yamobile.services::lang.services.name.placeholder'
+        required: 1
+        type: text
+    slug:
+        label: 'yamobile.services::lang.services.slug.label'
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
 tabs:
     fields:
-        name:
-            label: 'yamobile.services::lang.services.name.label'
-            placeholder: 'yamobile.services::lang.services.name.placeholder'
-            span: auto
-            type: text
-            tab: 'yamobile.services::lang.tabs.main'
         image:
-            label: Картинка
+            label: 'yamobile.services::lang.services.image.label'
             mode: image
             span: auto
+            imageWidth: '200'
             type: mediafinder
-            tab: 'yamobile.services::lang.tabs.main'
-        service:
-            label: Услуга
-            nameFrom: name
-            descriptionFrom: description
-            span: auto
-            type: relation
             tab: 'yamobile.services::lang.tabs.main'
         content:
             label: 'yamobile.services::lang.services.content.label'
             size: ''
-            span: auto
+            span: full
             type: richeditor
             tab: 'yamobile.services::lang.tabs.main'
         meta_title:
