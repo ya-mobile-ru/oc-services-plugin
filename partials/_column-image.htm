@@ -1,5 +1,7 @@
 <?php if ($value): ?>
     <img src="http://ya-october.ru/storage/app/media<?=$value?>" alt="" style="width: 100px">
 <?php else: ?>
-    <span> Нет данных </span>
+    <span>
+        <?= e(trans('yamobile.services::lang.system.no_data')) ?>
+    </span>
 <?php endif ?>
