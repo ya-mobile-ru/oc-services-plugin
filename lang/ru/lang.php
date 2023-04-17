@@ -1,19 +1,19 @@
 <?php return [
     'plugin' => [
-        'name' => 'Services',
+        'name' => 'Услуги',
         'description' => 'Плагин позволяет вывести услуги на сайт.',
         'author'=> 'Yamobile'
     ],
     'navigation'=> [
         'service_menu' => 'Услуги',
+        'side_menu_categories' => 'Категории',
         'side_menu_services' => 'Услуги',
-        'side_menu_subservices' => 'Под услуги',
-    ],
-    'tabs' => [
-        'main' => 'Основное',
-        'meta' => 'Мета-данные'
     ],
     'services'=>[
+        'tabs' => [
+            'main' => 'Основное',
+            'meta' => 'Мета-данные'
+        ],
         'id' =>[
           'label' => 'Идентификатор'
         ],
@@ -24,7 +24,7 @@
         'slug'=> [
             'label'=>'Ссылка',
         ],
-        'service' => [
+        'category' => [
            'label' => 'Связанная категория'
         ],
         'description'=> [
@@ -55,22 +55,22 @@
         'updated_at' => 'Дата обновления',
     ],
     'breadcrumb' => [
+        'categories' => [
+            'index' => 'Категории услуг',
+            'update' => 'Редактирование категории',
+            'create' => 'Создание категории',
+            'preview' => 'Превью категории'
+        ],
         'services' => [
             'index' => 'Услуги',
             'update' => 'Редактирование услуги',
             'create' => 'Создание услуги',
             'preview' => 'Превью услуги'
-        ],
-        'subservices' => [
-            'index' => 'Под услуги',
-            'update' => 'Редактирование под услуги',
-            'create' => 'Создание под услуги',
-            'preview' => 'Превью под услуги'
         ]
     ],
     'components' => [
-        'detail_services'=>[
-            'name' => 'Услуги',
+        'category'=>[
+            'name' => 'Категория услуги',
             'description' => 'Компонент для вывода детальной информации об услуге.',
             'properties' => [
                 'slug'=>[
@@ -79,8 +79,8 @@
                 ]
             ]
         ],
-        'preview_services'=>[
-            'name' => 'Превью услуг',
+        'categories'=>[
+            'name' => 'Все категории',
             'description' => 'Компонент для вывода краткой информации об услуге.',
             'properties' => [
                 'items'=>[
@@ -89,11 +89,11 @@
                 ]
             ]
         ],
-        'detail_subservices'=>[
-            'name' => 'Под услуги',
+        'service'=>[
+            'name' => 'Услуга',
             'description' => 'Компонент для вывода детальной информации об подуслуге.',
             'properties' => [
-                'service'=>[
+                'category'=>[
                     'title' => 'URL Родителя',
                     'description' => 'Параметр отвечает за динамический URL предыдущей записи.'
                 ],
@@ -103,8 +103,8 @@
                 ]
             ]
         ],
-        'preview_subservices'=>[
-            'name' => 'Превью подуслуг',
+        'services'=>[
+            'name' => 'Услуги',
             'description' => 'Компонент для вывода краткой информации об подуслуге.',
             'properties' => [
                 'items'=>[
