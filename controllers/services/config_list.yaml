@@ -1,4 +1,4 @@
-title: Услуги
+title: Services
 modelClass: Yamobile\Services\Models\Service
 list: $/yamobile/services/models/service/columns.yaml
 recordUrl: 'yamobile/services/services/update/:id'
@@ -9,4 +9,4 @@ showCheckboxes: true
 toolbar:
     buttons: list_toolbar
     search:
-        prompt: "backend::lang.list.search_prompt"
+        prompt: 'backend::lang.list.search_prompt'
