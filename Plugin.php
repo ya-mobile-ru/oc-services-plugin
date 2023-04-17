@@ -20,10 +20,10 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            \Yamobile\Services\Components\PreviewServices::class => 'PreviewServices',
-            \Yamobile\Services\Components\DetailServices::class => 'DetailServices',
-            \Yamobile\Services\Components\PreviewSubservices::class => 'PreviewSubservices',
-            \Yamobile\Services\Components\DetailSubservices::class => 'DetailSubservices'
+            \Yamobile\Services\Components\CategoriesComponent::class => 'CategoriesComponent',
+            \Yamobile\Services\Components\CategoryComponent::class => 'CategoryComponent',
+            \Yamobile\Services\Components\ServicesComponent::class => 'ServicesComponent',
+            \Yamobile\Services\Components\ServiceComponent::class => 'ServiceComponent'
 
         ];
 
