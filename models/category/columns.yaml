@@ -12,6 +12,10 @@ columns:
         type: text
         span: auto
         searchable: true
+    description:
+        label: 'yamobile.services::lang.services.description.label'
+        type: text
+        invisible: true
     meta_title:
         label: 'yamobile.services::lang.services.meta.title.label'
         type: text
