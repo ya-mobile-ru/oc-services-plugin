@@ -1,18 +1,11 @@
 fields:
     id:
-        label: Id
-        span: auto
-        readOnly: 1
-        hidden: 0
+        label: 'yamobile.services::lang.services.id.label'
+        span: full
+        disabled: 0
         required: 1
+        readOnly: 1
         type: number
-    service:
-        label: 'yamobile.services::lang.services.service.label'
-        nameFrom: name
-        descriptionFrom: description
-        span: auto
-        type: relation
-        tab: 'yamobile.services::lang.tabs.main'
     name:
         label: 'yamobile.services::lang.services.name.label'
         span: auto
@@ -22,7 +15,8 @@ fields:
     slug:
         label: 'yamobile.services::lang.services.slug.label'
         span: auto
-        required: 1
+        disabled: 0
+        required: 0
         preset:
             field: name
             type: slug
@@ -35,28 +29,35 @@ tabs:
             span: auto
             imageWidth: '200'
             type: mediafinder
-            tab: 'yamobile.services::lang.tabs.main'
+            tab: 'yamobile.services::lang.services.tabs.main'
+        description:
+            label: 'yamobile.services::lang.services.description.label'
+            placeholder: 'yamobile.services::lang.services.description.placeholder'
+            span: auto
+            required: 0
+            type: text
+            tab: 'yamobile.services::lang.services.tabs.main'
         content:
             label: 'yamobile.services::lang.services.content.label'
-            size: ''
+            size: giant
             span: full
             type: richeditor
-            tab: 'yamobile.services::lang.tabs.main'
+            tab: 'yamobile.services::lang.services.tabs.main'
         meta_title:
             label: 'yamobile.services::lang.services.meta.title.label'
             placeholder: 'yamobile.services::lang.services.meta.title.placeholder'
             span: auto
             type: text
-            tab: 'yamobile.services::lang.tabs.meta'
+            tab: 'yamobile.services::lang.services.tabs.meta'
         meta_description:
             label: 'yamobile.services::lang.services.meta.description.label'
             placeholder: 'yamobile.services::lang.services.meta.description.placeholder'
             span: auto
             type: text
-            tab: 'yamobile.services::lang.tabs.meta'
+            tab: 'yamobile.services::lang.services.tabs.meta'
         meta_keywords:
             label: 'yamobile.services::lang.services.meta.keywords.label'
             placeholder: 'yamobile.services::lang.services.meta.keywords.placeholder'
             span: auto
-            type: textarea
-            tab: 'yamobile.services::lang.tabs.meta'
+            type: text
+            tab: 'yamobile.services::lang.services.tabs.meta'

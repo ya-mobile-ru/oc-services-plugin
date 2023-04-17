@@ -7,14 +7,14 @@ plugin:
 navigation:
     services-menu:
         label: 'yamobile.services::lang.navigation.service_menu'
-        url: yamobile/services/services
+        url: yamobile/services/categories
         icon: icon-folder
         sideMenu:
+            side-menu-categories:
+                label: 'yamobile.services::lang.navigation.side_menu_categories'
+                url: yamobile/services/categories
+                icon: icon-sitemap
             side-menu-services:
                 label: 'yamobile.services::lang.navigation.side_menu_services'
                 url: yamobile/services/services
-                icon: icon-sitemap
-            side-menu-subservices:
-                label: 'yamobile.services::lang.navigation.side_menu_subservices'
-                url: yamobile/services/subservices
                 icon: icon-list

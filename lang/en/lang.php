@@ -1,19 +1,19 @@
 <?php return [
     'plugin' => [
         'name' => 'Services',
-        'description' => 'The plugin allows you to bring services to the site',
+        'description' => 'The plugin allows you to bring categories to the site',
         'author'=> 'Yamobile'
     ],
     'navigation'=> [
         'service_menu' => 'Services',
-        'side_menu_services' => 'Services',
-        'side_menu_subservices' => 'Subservices',
-    ],
-    'tabs' => [
-        'main' => 'Basic',
-        'meta' => 'Meta-data'
+        'side_menu_services' => 'Categories',
+        'side_menu_subservices' => 'Services',
     ],
     'services'=>[
+        'tabs' => [
+            'main' => 'Basic',
+            'meta' => 'Meta-data'
+        ],
         'id' =>[
           'label' => 'ID'
         ],
@@ -24,7 +24,7 @@
         'slug'=> [
             'label'=>'URL',
         ],
-        'service' => [
+        'category' => [
             'label' => 'Related category'
         ],
         'description'=> [
@@ -55,23 +55,23 @@
         'updated_at' => 'Update date',
     ],
     'breadcrumb' => [
+        'categories' => [
+            'index' => 'Categories',
+            'update' => 'Editing category',
+            'create' => 'Creating category',
+            'preview' => 'Preview category'
+        ],
         'services' => [
             'index' => 'Services',
             'update' => 'Editing service',
             'create' => 'Creating service',
-            'preview' => 'Preview service'
-        ],
-        'subservices' => [
-            'index' => 'Subservices',
-            'update' => 'Editing subservice',
-            'create' => 'Creating subservice',
-            'preview' => 'Preview subservices'
+            'preview' => 'Preview services'
         ]
     ],
     'components' => [
         'detail_services'=>[
-            'name' => 'Services',
-            'description' => 'Component for displaying detailed information about the service.',
+            'name' => 'Categories',
+            'description' => 'Component for displaying detailed information about the category.',
             'properties' => [
                 'slug'=>[
                     'title' => 'Current URL',
@@ -80,8 +80,8 @@
             ]
         ],
         'preview_services'=>[
-            'name' => 'Preview services',
-            'description' => 'Component for displaying brief information about services',
+            'name' => 'Preview categories',
+            'description' => 'Component for displaying brief information about categories',
             'properties' => [
                 'items'=>[
                     'title' => 'Number of entries',
@@ -90,10 +90,10 @@
             ]
         ],
         'detail_subservices'=>[
-            'name' => 'Subservices',
-            'description' => 'Component for displaying detailed information about a sub-service.',
+            'name' => 'Services',
+            'description' => 'Component for displaying detailed information about a sub-category.',
             'properties' => [
-                'service'=>[
+                'category'=>[
                     'title' => 'Parent URL',
                     'description' => 'The parameter is responsible for the dynamic URL of the previous record.'
                 ],
@@ -104,8 +104,8 @@
             ]
         ],
         'preview_subservices'=>[
-            'name' => 'Preview subservices',
-            'description' => 'Component for displaying brief information about a subservice',
+            'name' => 'Preview services',
+            'description' => 'Component for displaying brief information about a service',
             'properties' => [
                 'items'=>[
                     'title' => 'Number of entries',

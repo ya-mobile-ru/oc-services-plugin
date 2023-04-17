@@ -1,5 +1,6 @@
 <?php if ($value): ?>
-    <img src="http://ya-october.ru/storage/app/media<?=$value?>" alt="" style="width: 100px">
+    <img src="<?=$_SERVER['REQUEST_SCHEME']?>://<?=$_SERVER['HTTP_HOST']?>/storage/app/media<?=$value?>" alt="" style="width: 100px">
+
 <?php else: ?>
     <span>
         <?= e(trans('yamobile.services::lang.system.no_data')) ?>
