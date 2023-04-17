@@ -13,8 +13,8 @@ class CreateYamobileServicesSubservice extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->string('meta_title')->nullable();
-            $table->string('meta_description')->nullable();
-            $table->text('meta_keywords')->nullable();
+            $table->text('meta_description')->nullable();
+            $table->string('meta_keywords')->nullable();
             $table->string('name')->nullable();
             $table->text('content')->nullable();
             $table->string('image_url')->nullable();
