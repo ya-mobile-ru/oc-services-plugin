@@ -9,6 +9,9 @@ use Yamobile\Services\Models\Category;
 class ServiceComponent extends ComponentBase
 {
 
+    public $service;
+
+
     public function componentDetails()
     {
         return [
@@ -47,11 +50,15 @@ class ServiceComponent extends ComponentBase
 
     }
 
-        $slug = $this->property('slug');
-        $service = $this->property('category_slug');
 
-        return Service::where('slug',$slug)->first();
+    private function loadService()
+    {
 
+        $service = Service::where('slug', $this->property('slug'))
+            ->where('is_enabled', true)
+            ->first();
+
+        return $service;
     }
 
 }
