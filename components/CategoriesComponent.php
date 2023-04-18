@@ -10,6 +10,9 @@ use Yamobile\Services\Models\Category;
 class CategoriesComponent extends ComponentBase
 {
 
+    public $categories;
+
+
     public function componentDetails()
     {
         return [
@@ -29,17 +32,29 @@ class CategoriesComponent extends ComponentBase
         ];
     }
 
-    public function getAllCategories()
+
+    public function onRun()
+    {
+
+        $this->categories = $this->loadCategories();
+
+    }
+
+
+    private function loadCategories()
     {
 
         $items = $this->property('items');
 
-        // СПРОСИТЬ У ЖЕНИ КАК ПОЛУЧИТЬ ЗНАЧЕНИЕ
-            if($items == 'all'){
-                return Category::all();
-            }else{
-                return Category::paginate($items);
-            }
+        $categories = Category::where('is_enabled', true);
+
+
+        if($items == 'all'){
+            return $categories->get();
+        }else{
+            return $categories->paginate($items);
+        }
+
     }
 
 }
