@@ -31,14 +31,17 @@ class CategoryComponent extends ComponentBase
         ];
     }
 
-    public function getDetailCategory()
+
+    public function onRun()
     {
 
         $slug = $this->property('slug');
 
-        $detail_services = Category::where('slug',$slug)->first();
+        $category = Category::where('slug',$slug)
+            ->where('is_enabled', true)
+            ->first();
 
-        return $detail_services;
+        return $category;
     }
 
 
