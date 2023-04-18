@@ -35,7 +35,17 @@ class ServiceComponent extends ComponentBase
         ];
     }
 
-    public function getDetailService(){
+    public function onRun()
+    {
+
+        $this->service = $this->loadService();
+
+        if(!$this->service || ($this->service->category['slug'] !== $this->property('category_slug'))) {
+            $this->setStatusCode(404);
+            return $this->controller->run('404');
+        }
+
+    }
 
         $slug = $this->property('slug');
         $service = $this->property('category_slug');
