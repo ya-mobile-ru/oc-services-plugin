@@ -10,6 +10,8 @@ use Yamobile\Services\Models\Service;
 class ServicesComponent extends ComponentBase
 {
 
+    public $services;
+
     public function componentDetails()
     {
         return [
