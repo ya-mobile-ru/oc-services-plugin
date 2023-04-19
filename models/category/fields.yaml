@@ -7,9 +7,9 @@ fields:
         required: 1
         type: number
     is_enabled:
-        label: ''
-        'on': Скрыть
-        'off': Активировать
+        label: 'yamobile.services::lang.services.is_enabled.label'
+        'on': 'yamobile.services::lang.services.is_enabled.on'
+        'off': 'yamobile.services::lang.services.is_enabled.off'
         span: auto
         default: 1
         type: switch
