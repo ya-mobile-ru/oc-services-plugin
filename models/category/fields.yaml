@@ -1,11 +1,18 @@
 fields:
     id:
         label: 'yamobile.services::lang.services.id.label'
-        span: full
+        span: auto
         disabled: 0
-        required: 1
         readOnly: 1
+        required: 1
         type: number
+    is_enabled:
+        label: ''
+        'on': Скрыть
+        'off': Активировать
+        span: auto
+        default: 1
+        type: switch
     name:
         label: 'yamobile.services::lang.services.name.label'
         span: auto

@@ -2,6 +2,8 @@
 
 namespace Yamobile\Services\Components;
 
+
+use Response;
 use Cms\Classes\ComponentBase;
 use Yamobile\Services\Models\Category;
 
@@ -9,6 +11,8 @@ use Yamobile\Services\Models\Category;
 
 class CategoryComponent extends ComponentBase
 {
+
+    public $category;
 
     public function componentDetails()
     {
@@ -31,14 +35,29 @@ class CategoryComponent extends ComponentBase
         ];
     }
 
-    public function getDetailCategory()
+
+    public function onRun()
     {
 
+        $this->category = $this->loadCategory();
+
+        if(!$this->category){
+            $this->setStatusCode(404);
+            return $this->controller->run('404');
+        }
+
+    }
+
+
+    private function loadCategory()
+    {
         $slug = $this->property('slug');
 
-        $detail_services = Category::where('slug',$slug)->first();
+        $category = Category::where('slug',$slug)
+            ->where('is_enabled', true)
+            ->first();
 
-        return $detail_services;
+        return $category;
     }
 
 

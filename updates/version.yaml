@@ -37,3 +37,11 @@
   - Fixed a bug when creating a service and selecting categories
   - Added a dynamic link to the image
   - rename_yamobile_services_services_service_id.php
+4.2.0:
+  - Added the ability to hide records
+  - add_enabled_to_yamobile_services_category.php
+  - add_enabled_to_yamobile_services_services.php
+4.2.1:
+  - Fixed the error of displaying a record with an incorrect category_slug
+  - Fixed display of inactive service categories
+  - Fixed empty page display for inactive categories and services

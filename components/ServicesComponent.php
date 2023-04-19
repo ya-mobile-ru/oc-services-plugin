@@ -10,6 +10,8 @@ use Yamobile\Services\Models\Service;
 class ServicesComponent extends ComponentBase
 {
 
+    public $services;
+
     public function componentDetails()
     {
         return [
@@ -29,19 +31,24 @@ class ServicesComponent extends ComponentBase
         ];
     }
 
-    /**
-     *  Выводит колекцию из базы данных
-     */
-        public function getAllServices()
+    public function onRun()
+    {
+
+        $this->services = $this->loadServices();
+
+    }
+
+    private function loadServices()
     {
 
         $items = $this->property('items');
+        $services = Service::where('is_enabled', 1);
 
-        // СПРОСИТЬ У ЖЕНИ КАК ПОЛУЧИТЬ ЗНАЧЕНИЕ
+
         if($items == 'all'){
-            return Service::all();
+            return $services->get();
         }else{
-            return Service::paginate($items);
+            return $services->paginate($items);
         }
     }
 

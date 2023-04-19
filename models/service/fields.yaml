@@ -6,6 +6,13 @@ fields:
         hidden: 0
         required: 1
         type: number
+    is_enabled:
+        label: ''
+        'on': Скрыть
+        'off': Активировать
+        span: auto
+        default: 1
+        type: switch
     category:
         label: 'yamobile.services::lang.services.category.label'
         nameFrom: name
