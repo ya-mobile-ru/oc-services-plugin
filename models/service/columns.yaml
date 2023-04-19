@@ -30,3 +30,6 @@ columns:
     updated_at:
         label: 'yamobile.services::lang.services.updated_at'
         type: datetime
+    is_enabled:
+        label: Активность
+        type: switch
