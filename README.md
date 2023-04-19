@@ -19,12 +19,14 @@ php artisan plugin:remove Yamobile.Services
 ## Using components
 
 This plugin provides 4 components — `CategoryComponent`,`CategoriesComponent`,`ServiceComponent`,`ServicesComponent`.
-All components allow you to output information All Components allow you to output information about categories or services to your template. Categories and services added to the backend panel of your site will be available in the template.and information about categories or services in your twig template. Categories and services added to the backend panel of your site will be available in the template.
+All Components allow you to output information about categories or services to your template.
+Categories and services added to the backend panel of your site will be available in the  twig template.
 
 
 ### CategoriesComponent
 
-This component allows to output information from the backend to your twig template in any form convenient for you. This component supports property `items`, it is responsible for the number of output records. 
+This component allows to output information about categories from the backend to your twig template in any form convenient for you.
+This component supports property `items`, it is responsible for the number of output records.
 
 ```Twig
 [CategoriesComponent]
@@ -33,14 +35,14 @@ items = "all" or "need count"
 
 ```
 
-This component provides 1 function - `getAllCategories`. If you need to display all categories, then enter assign to the `items` value the value of `all`, if only a certain number, then enter the required number of records.
+This component provides 1 variable - `categories`. If you need to display all categories, then enter assign to the `items` value the value of `all`, if only a certain number, then enter the required number of records.
 
 ```Twig
 [CategoriesComponent]
 items = "all"
 ==
 
-{% for category in CategoriesComponent.getAllCategories %}
+{% for category in CategoriesComponent.categories %}
     <a href="{{'home' | page}}/{{ category.slug }}">{{ category.name }}</a>
 {% endfor %}
 
@@ -53,19 +55,19 @@ items = "6"
 ==
 
 <div>
-    {% for category in CategoriesComponent.getAllCategories %}
+    {% for category in CategoriesComponent.categories %}
         <div>
             <div>
-                <img src="{{ category.image | media }}" alt="{{ service.name }}">
+                <img src="{{ category.image | media }}" alt="{{ category.name }}">
             </div>
-                <h4><a href="{{ category.slug }}">{{ service.name }}</a></h3>
+                <h4><a href="{{ category.slug }}">{{ category.name }}</a></h3>
                 <p>
                     {{category.description}}
                 </p>
         </div>
     {% endfor %}
 </div>
-{{ CategoriesComponent.getAllCategories.render | raw }}
+{{ CategoriesComponent.categories.render | raw }}
 ```
 
 ### CategoryComponent
@@ -74,14 +76,14 @@ This component allows you to output information from the backend to your Twig te
 
 To use the component, you must enter `:slug` in the page url when creating the page.
 
-This component provides 1 function - `getDetailCategory`. This function outputs all the information about the category.
+This component provides 1 variable - `category`. This variable outputs all the information about the category.
 
 
 ```Twig
-[ServicesComponent]
+[CategoryComponent]
 slug = "{{ :slug }}"
 ==
-{% set category = DetailServices.getDetailServices %}
+{% set category = CategoryComponent.category %}
 
 {{ category.meta_title }}
 {{ category.desctiption }}
@@ -95,20 +97,23 @@ slug = "{{ :slug }}"
 You will also have access to all the services linked to the category, with all their properties.
 
 ```Twig
-[ServicesComponent]
+[CategoryComponent]
 slug = "{{ :slug }}"
 ==
-{% set category = DetailServices.getDetailServices %}
+{% set category = CategoryComponent.category %}
 
-<ul style="display:flex;flex-wrap: wrap;list-style:none;">
+<ul>
     {% for service in category.service %}
-        <li style="width:49%;padding:20px 50px;background:#f5f5f5;margin:5px">
-            <a href="{{'home' | page}}/{{ service.slug }}/{{service.slug}}" style="color:#232222;font-weight:700">{{ subservice.name }}</a>
+        <li>
+            <a href="{{'home' | page}}/{{ service.slug }}/{{service.slug}}">{{ subservice.name }}</a>
         </li>
     {% endfor %}
 </ul>
 
 ```
+
+
+
 
 ### ServicesComponent
 
@@ -116,19 +121,19 @@ This component allows you to output information from the backend to your twig te
 
 ```Twig
 [ServicesComponent]
-items = "all" or "need count"
+items = "all"
 ==
 
 ```
 
-This component provides 1 function - `getAllServices`. If you need to display all categories, then enter assign to the `items` value the value of `all`, if only a certain number, then enter the required number of records.
+This component provides 1 variable - `services`. If you need to display all services, then enter assign to the `items` value the value of `all`, if only a certain number, then enter the required number of records.
 
 ```Twig
 [ServicesComponent]
 items = "all"
 ==
 
-{% for service in ServicesComponent.getAllServices %}
+{% for service in ServicesComponent.services %}
     <a href="{{'home' | page}}/{{ service.slug }}">{{ service.name }}</a>
 {% endfor %}
 
@@ -143,7 +148,7 @@ items = "6"
 ==
 
 <div>
-    {% for service in ServicesComponent.getAllServices %}
+    {% for service in ServicesComponent.services %}
         <div>
             <div>
                 <img src="{{ service.image | media }}" alt="{{ service.name }}">
@@ -152,7 +157,7 @@ items = "6"
         </div>
     {% endfor %}
 </div>
-{{ ServicesComponent.getAllServices.render | raw }}
+{{ ServicesComponent.services.render | raw }}
 ```
 
 ### ServiceComponent
@@ -162,15 +167,15 @@ This component allows you to output information from the backend to your twig te
 
 To use the component, you must enter `:category_slug/:slug` in the page url when creating the page.
 
-This component provides 1 function - `getDetailService`. This function outputs all the information about the service.
+This component provides 1 variable - `service`. This variable outputs all the information about the service.
 
 ```Twig
-[ServicesComponent]
+[ServiceComponent]
 category_slug = "{{ :category_slug }}"
 slug = "{{ :slug }}"
 
 ==
-{% set service = ServiceComponent.getServiceBySlug %}
+{% set service = ServiceComponent.service %}
 
 {{ service.meta_title }}
 {{ service.desctiption }}
@@ -183,12 +188,12 @@ slug = "{{ :slug }}"
 Just like the category has access to all the linked services. The service has access to all the properties of the parent category.
 
 ```Twig
-[ServicesComponent]
+[ServiceComponent]
 category_slug = "{{ :category_slug }}"
 slug = "{{ :slug }}"
 
 ==
-{% set service = ServiceComponent.getServiceBySlug %}
+{% set service = ServiceComponent.service %}
 
 {{ service.category.name }}     // display name of the parent category
 
