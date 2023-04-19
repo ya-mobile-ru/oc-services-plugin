@@ -8,14 +8,17 @@ use Yamobile\Services\Models\Service;
 class Category extends Model
 {
 
+    use \October\Rain\Database\Traits\Sortable;
+
     public $table = 'yamobile_services_categories';
 
     public $hasMany = [
-        'services' => Service::class,
+        'services' => [
+            Service::class,
+            'order' => 'name',
+            'conditions' => 'is_enabled = true'
+        ]
     ];
 
-    public function activeServices()
-    {
-        return $this->services->where('is_enabled', true);
-    }
+
 }
