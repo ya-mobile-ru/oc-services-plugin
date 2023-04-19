@@ -10,7 +10,7 @@ use Yamobile\Services\Models\Category;
 class Service extends Model
 {
 
-
+    use \October\Rain\Database\Traits\Sortable;
 
     public $table = 'yamobile_services_services';
 
