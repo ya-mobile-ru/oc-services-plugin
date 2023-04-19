@@ -45,3 +45,7 @@
   - Fixed the error of displaying a record with an incorrect category_slug
   - Fixed display of inactive service categories
   - Fixed empty page display for inactive categories and services
+4.3.0:
+  - Add sorting for categories and services
+  - add_reorder_to_yamobile_services_category.php
+  - add_reorder_to_yamobile_services_services.php
