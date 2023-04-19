@@ -12,6 +12,9 @@ columns:
         type: text
         span: auto
         searchable: true
+    is_enabled:
+        label: 'yamobile.services::lang.services.is_enabled.label'
+        type: switch
     meta_title:
         label: 'yamobile.services::lang.services.meta.title.label'
         type: text
@@ -30,6 +33,4 @@ columns:
     updated_at:
         label: 'yamobile.services::lang.services.updated_at'
         type: datetime
-    is_enabled:
-        label: Активность
-        type: switch
+
