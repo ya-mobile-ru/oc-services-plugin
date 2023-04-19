@@ -6,8 +6,8 @@
     ],
     'navigation'=> [
         'service_menu' => 'Services',
-        'side_menu_services' => 'Categories',
-        'side_menu_subservices' => 'Services',
+        'side_menu_categories' => 'Categories',
+        'side_menu_services' => 'Services',
     ],
     'services'=>[
         'tabs' => [
@@ -20,6 +20,11 @@
         'name'=> [
             'label'=>'Name',
             'placeholder'=>'Enter a name',
+        ],
+        'is_enabled'=>[
+            'label' => 'Activity',
+            'on' => 'On',
+            'off' => 'Off'
         ],
         'slug'=> [
             'label'=>'URL',
@@ -59,17 +64,19 @@
             'index' => 'Categories',
             'update' => 'Editing category',
             'create' => 'Creating category',
-            'preview' => 'Preview category'
+            'preview' => 'Preview category',
+            'reorder' => 'Sorting categories'
         ],
         'services' => [
             'index' => 'Services',
             'update' => 'Editing service',
             'create' => 'Creating service',
-            'preview' => 'Preview services'
+            'preview' => 'Preview services',
+            'reorder' => 'Sorting services'
         ]
     ],
     'components' => [
-        'detail_services'=>[
+        'category'=>[
             'name' => 'Categories',
             'description' => 'Component for displaying detailed information about the category.',
             'properties' => [
@@ -79,7 +86,7 @@
                 ]
             ]
         ],
-        'preview_services'=>[
+        'categories'=>[
             'name' => 'Preview categories',
             'description' => 'Component for displaying brief information about categories',
             'properties' => [
@@ -89,7 +96,7 @@
                 ]
             ]
         ],
-        'detail_subservices'=>[
+        'service'=>[
             'name' => 'Services',
             'description' => 'Component for displaying detailed information about a sub-category.',
             'properties' => [
@@ -103,7 +110,7 @@
                 ]
             ]
         ],
-        'preview_subservices'=>[
+        'services'=>[
             'name' => 'Preview services',
             'description' => 'Component for displaying brief information about a service',
             'properties' => [
