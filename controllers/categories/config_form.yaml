@@ -5,5 +5,8 @@ defaultRedirect: yamobile/services/categories
 create:
     redirect: 'yamobile/services/categories/update/:id'
     redirectClose: yamobile/services/categories
-update: {  }
+update:
+    redirect: yamobile/services/categories
+    redirectClose: yamobile/services/categories
 preview: {  }
+
