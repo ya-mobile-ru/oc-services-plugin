@@ -56,4 +56,4 @@
     - create_price_to_category.php
 4.4.1:
     - 'Updated table yamobile_services_price'
-    - builder_table_update_yamobile_services_prices.php
+    - rename_table_yamobile_services_prices.php
