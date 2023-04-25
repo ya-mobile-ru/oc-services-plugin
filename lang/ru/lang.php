@@ -8,6 +8,7 @@
         'service_menu' => 'Услуги',
         'side_menu_categories' => 'Категории',
         'side_menu_services' => 'Услуги',
+        'side_menu_prices' => 'Прайсы'
     ],
     'services'=>[
         'tabs' => [
@@ -29,8 +30,15 @@
         'slug'=> [
             'label'=>'Ссылка',
         ],
+        'price' => [
+            'label' => 'Цена',
+            'placeholder'=>'Введите цену в любом формате',
+        ],
         'category' => [
            'label' => 'Связанная категория'
+        ],
+        'categories' => [
+            'label' => 'Связанные категории'
         ],
         'description'=> [
             'label'=>'Краткое описание',
@@ -56,6 +64,10 @@
                 'placeholder' => 'Введите ключевые слова для SEO'
             ]
         ],
+        'prices' => [
+            'label' => 'Прайсы'
+        ],
+        'sort_order' => 'Сортировка',
         'created_at' => 'Дата создания',
         'updated_at' => 'Дата обновления',
     ],
@@ -73,6 +85,13 @@
             'create' => 'Создание услуги',
             'preview' => 'Превью услуги',
             'reorder' => 'Сортировка услуг'
+        ],
+        'prices' => [
+            'index' => 'Прайсы',
+            'update' => 'Редактирование прайса',
+            'create' => 'Создание прайса',
+            'preview' => 'Превью прайса',
+            'reorder' => 'Сортировка прайсов'
         ]
     ],
     'components' => [
