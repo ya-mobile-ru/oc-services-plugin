@@ -8,6 +8,7 @@
         'service_menu' => 'Services',
         'side_menu_categories' => 'Categories',
         'side_menu_services' => 'Services',
+        'side_menu_prices' => 'Prices',
     ],
     'services'=>[
         'tabs' => [
@@ -29,8 +30,15 @@
         'slug'=> [
             'label'=>'URL',
         ],
+        'price' => [
+            'label' => 'Price',
+            'placeholder'=>'Enter the price in any format',
+        ],
         'category' => [
             'label' => 'Related category'
+        ],
+        'categories' => [
+            'label' => 'Related categories'
         ],
         'description'=> [
             'label'=>'Short description',
@@ -56,6 +64,10 @@
                 'placeholder' => 'Enter keywords for SEO'
             ]
         ],
+        'prices' => [
+            'label' => 'Prices'
+        ],
+        'sort_order' => 'Sorting',
         'created_at' => 'Date of creation',
         'updated_at' => 'Update date',
     ],
@@ -73,6 +85,13 @@
             'create' => 'Creating service',
             'preview' => 'Preview services',
             'reorder' => 'Sorting services'
+        ],
+        'prices' => [
+            'index' => 'Prices',
+            'update' => 'Price editing',
+            'create' => 'Creating price',
+            'preview' => 'Price preview',
+            'reorder' => 'Sorting price'
         ]
     ],
     'components' => [

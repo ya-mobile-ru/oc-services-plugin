@@ -44,6 +44,13 @@ tabs:
             required: 0
             type: text
             tab: 'yamobile.services::lang.services.tabs.main'
+        prices:
+            label: 'yamobile.services::lang.services.prices.label'
+            nameFrom: name
+            descriptionFrom: description
+            span: full
+            type: relation
+            tab: 'yamobile.services::lang.services.tabs.main'
         content:
             label: 'yamobile.services::lang.services.content.label'
             size: giant

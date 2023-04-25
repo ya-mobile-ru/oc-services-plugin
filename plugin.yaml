@@ -18,3 +18,7 @@ navigation:
                 label: 'yamobile.services::lang.navigation.side_menu_services'
                 url: yamobile/services/services
                 icon: icon-list
+            side-menu-prices:
+                label: 'yamobile.services::lang.navigation.side_menu_prices'
+                url: yamobile/services/prices
+                icon: icon-money

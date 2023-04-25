@@ -20,5 +20,13 @@ class Category extends Model
         ]
     ];
 
+    public $belongsToMany = [
+        'prices' => [
+                \Yamobile\Services\Models\Price::class,
+                'table' => 'yamobile_price_to_categories',
+                'order' => 'name',
+                'conditions' => 'is_enabled = true'
+            ]
+    ];
 
 }
