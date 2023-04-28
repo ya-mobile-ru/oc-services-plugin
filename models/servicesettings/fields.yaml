@@ -1,0 +1,28 @@
+fields:
+    image:
+        label: 'Media finder'
+        mode: image
+        span: full
+        type: mediafinder
+    content:
+        label: 'Rich editor'
+        size: giant
+        span: full
+        type: richeditor
+    seo_name:
+        label: Text
+        span: auto
+        type: text
+    meta_title:
+        label: Мета-титле
+        span: auto
+        type: text
+    meta_keywords:
+        label: Text
+        span: auto
+        type: text
+    meta_description:
+        label: Text
+        span: auto
+        type: text
+
