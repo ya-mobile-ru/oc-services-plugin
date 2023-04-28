@@ -1,6 +1,9 @@
-<?php namespace Yamobile\Services;
+<?php
+
+namespace Yamobile\Services;
 
 use System\Classes\PluginBase;
+
 use Backend;
 
 class Plugin extends PluginBase
@@ -39,7 +42,7 @@ class Plugin extends PluginBase
             \Yamobile\Services\Components\CategoryComponent::class => 'CategoryComponent',
             \Yamobile\Services\Components\ServicesComponent::class => 'ServicesComponent',
             \Yamobile\Services\Components\ServiceComponent::class => 'ServiceComponent',
-            \Yamobile\Locations\Components\LocationSettingsComponent::class => 'LocationSettings',
+            \Yamobile\Locations\Components\ServiceSettingsComponent::class => 'ServiceSettings',
 
         ];
 
