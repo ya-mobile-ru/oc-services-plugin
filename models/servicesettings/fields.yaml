@@ -1,28 +1,32 @@
 fields:
     image:
-        label: 'Media finder'
+        label: 'yamobile.services::lang.services.image.label'
         mode: image
         span: full
         type: mediafinder
     content:
-        label: 'Rich editor'
+        label: 'yamobile.services::lang.services.content.label'
         size: giant
         span: full
         type: richeditor
     seo_name:
-        label: Text
+        label: 'yamobile.services::lang.services.meta.seo_name.label'
+        placeholder: 'yamobile.services::lang.services.meta.seo_name.placeholder'
         span: auto
         type: text
     meta_title:
-        label: Мета-титле
+        label: 'yamobile.services::lang.services.meta.title.label'
+        placeholder: 'yamobile.services::lang.services.meta.title.placeholder'
         span: auto
         type: text
     meta_keywords:
-        label: Text
+        label: 'yamobile.services::lang.services.meta.keywords.label'
+        placeholder: 'yamobile.services::lang.services.meta.keywords.placeholder'
         span: auto
         type: text
     meta_description:
-        label: Text
+        label: 'yamobile.services::lang.services.meta.description.label'
+        placeholder: 'yamobile.services::lang.services.meta.description.placeholder'
         span: auto
         type: text
 
