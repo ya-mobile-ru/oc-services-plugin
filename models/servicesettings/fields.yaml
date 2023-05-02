@@ -4,11 +4,11 @@ fields:
         mode: image
         span: full
         type: mediafinder
-    content:
+    description:
         label: 'yamobile.services::lang.services.content.label'
-        size: giant
+        size: huge
         span: full
-        type: richeditor
+        type: textarea
     seo_name:
         label: 'yamobile.services::lang.services.meta.seo_name.label'
         placeholder: 'yamobile.services::lang.services.meta.seo_name.placeholder'
