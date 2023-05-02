@@ -13,6 +13,7 @@ class CategoryComponent extends ComponentBase
 {
 
     public $category;
+    public $breadcrumbs;
 
     public function componentDetails()
     {
@@ -46,6 +47,9 @@ class CategoryComponent extends ComponentBase
             return $this->controller->run('404');
         }
 
+        $this->breadcrumbs = $this->generateBreadcrumbs();
+
+
     }
 
 
@@ -60,6 +64,19 @@ class CategoryComponent extends ComponentBase
         return $category;
     }
 
+    private function generateBreadcrumbs(){
 
+        $arBreadcrumbs = array();
+
+        $category = $this->loadCategory();
+
+        $arBreadcrumbs[] = [
+            'name' => $category->name,
+            'link' => false
+        ];
+
+        return $arBreadcrumbs;
+
+    }
 
 }
