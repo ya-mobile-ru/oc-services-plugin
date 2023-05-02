@@ -3,7 +3,7 @@
 namespace Yamobile\Services\Components;
 
 use Cms\Classes\ComponentBase;
-use Yamobile\Locations\Models\ServiceSettings;
+use Yamobile\Services\Models\ServiceSettings;
 
 class ServiceSettingsComponent extends ComponentBase
 {
@@ -26,7 +26,7 @@ class ServiceSettingsComponent extends ComponentBase
     {
         return [
             'image' => ServiceSettings::get('image'),
-            'content' => ServiceSettings::get('content'),
+            'description' => ServiceSettings::get('description'),
             'seo_name' => ServiceSettings::get('seo_name'),
             'meta_title' => ServiceSettings::get('meta_title'),
             'meta_keywords' => ServiceSettings::get('meta_keywords'),
