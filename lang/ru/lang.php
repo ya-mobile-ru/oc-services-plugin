@@ -51,6 +51,10 @@
             'label' => 'Контент'
         ],
         'meta' => [
+            'seo_name' => [
+              'label' => 'Заголовок H1',
+              'placeholder' => 'Введите заголовок H1 для SEO'
+            ],
             'title' => [
                 'label'=> 'Meta Заголовок',
                 'placeholder' => 'Введите заголовок для SEO'
