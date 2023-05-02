@@ -1,6 +1,9 @@
-<?php namespace Yamobile\Services;
+<?php
+
+namespace Yamobile\Services;
 
 use System\Classes\PluginBase;
+
 use Backend;
 
 class Plugin extends PluginBase
@@ -17,13 +20,29 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerSettings()
+    {
+        return [
+            'location' => [
+                'label' => 'yamobile.services::lang.settings.service.label',
+                'description' => 'yamobile.services::lang.settings.service.description',
+                'category' => 'yamobile.services::lang.settings.service.category',
+                'icon' => 'icon-folder',
+                'class' => \Yamobile\Services\Models\ServiceSettings::class,
+                'order' => 500,
+                'keywords' => 'yamobile.services::lang.settings.service.keywords'
+            ]
+        ];
+    }
+
     public function registerComponents()
     {
         return [
             \Yamobile\Services\Components\CategoriesComponent::class => 'CategoriesComponent',
             \Yamobile\Services\Components\CategoryComponent::class => 'CategoryComponent',
             \Yamobile\Services\Components\ServicesComponent::class => 'ServicesComponent',
-            \Yamobile\Services\Components\ServiceComponent::class => 'ServiceComponent'
+            \Yamobile\Services\Components\ServiceComponent::class => 'ServiceComponent',
+            \Yamobile\Services\Components\ServiceSettingsComponent::class => 'ServiceSettings',
 
         ];
 

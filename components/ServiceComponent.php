@@ -10,6 +10,7 @@ class ServiceComponent extends ComponentBase
 {
 
     public $service;
+    public $breadcrumbs;
 
 
     public function componentDetails()
@@ -48,6 +49,7 @@ class ServiceComponent extends ComponentBase
             return $this->controller->run('404');
         }
 
+        $this->breadcrumbs = $this->generateBreadcrumbs();
     }
 
 
@@ -59,6 +61,28 @@ class ServiceComponent extends ComponentBase
             ->first();
 
         return $service;
+    }
+
+    private function generateBreadcrumbs(){
+
+        $arBreadcrumbs = array();
+
+        $service = $this->loadService();
+
+        $category = $service->category;
+
+        $arBreadcrumbs[] = [
+            'name' => $category->name,
+            'link' => $category->slug
+        ];
+
+        $arBreadcrumbs[] = [
+            'name' => $service->name,
+            'link' => false
+        ];
+
+        return $arBreadcrumbs;
+
     }
 
 }
