@@ -51,6 +51,10 @@
             'label' => 'Content'
         ],
         'meta' => [
+            'seo_name' => [
+                'label' => 'H1 Header',
+                'placeholder' => 'Enter the H1 header for SEO'
+            ],
             'title' => [
                 'label'=> 'Meta Title',
                 'placeholder' => 'Enter a title for SEO'
@@ -92,6 +96,14 @@
             'create' => 'Creating price',
             'preview' => 'Price preview',
             'reorder' => 'Sorting price'
+        ]
+    ],
+    'settings' => [
+        'service' => [
+            'label' => 'Home page of services',
+            'description' => 'Changing the data of the main page of all services.',
+            'category' => 'Content',
+            'keywords' => 'services, categories of services'
         ]
     ],
     'components' => [
