@@ -42,7 +42,7 @@ class Plugin extends PluginBase
             \Yamobile\Services\Components\CategoryComponent::class => 'CategoryComponent',
             \Yamobile\Services\Components\ServicesComponent::class => 'ServicesComponent',
             \Yamobile\Services\Components\ServiceComponent::class => 'ServiceComponent',
-            \Yamobile\Locations\Components\ServiceSettingsComponent::class => 'ServiceSettings',
+            \Yamobile\Services\Components\ServiceSettingsComponent::class => 'ServiceSettings',
 
         ];
 
