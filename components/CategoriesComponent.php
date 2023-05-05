@@ -48,12 +48,11 @@ class CategoriesComponent extends ComponentBase
 
         $categories = Category::where('is_enabled', true);
 
-
-        if($items == 'all'){
-            return $categories->get();
-        }else{
+        if($items){
             return $categories->paginate($items);
         }
+
+        return $categories->get();
 
     }
 
