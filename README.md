@@ -1,6 +1,6 @@
 # Services plugin
 
-Services for October CMS.
+Simple plugin for publishing company services for October CMS.
 
 ## Installation
 
