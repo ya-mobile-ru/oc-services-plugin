@@ -27,7 +27,7 @@ class ServiceSettingsComponent extends ComponentBase
         return [
             'image' => ServiceSettings::get('image'),
             'description' => ServiceSettings::get('description'),
-            'seo_name' => ServiceSettings::get('seo_name'),
+            'h1' => ServiceSettings::get('h1'),
             'meta_title' => ServiceSettings::get('meta_title'),
             'meta_keywords' => ServiceSettings::get('meta_keywords'),
             'meta_description' => ServiceSettings::get('meta_description'),
