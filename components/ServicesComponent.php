@@ -42,14 +42,15 @@ class ServicesComponent extends ComponentBase
     {
 
         $items = $this->property('items');
-        $services = Service::where('is_enabled', 1);
+        $services = Service::where('is_enabled', true);
 
 
-        if($items == 'all'){
-            return $services->get();
-        }else{
+        if($items){
             return $services->paginate($items);
         }
+
+        return $services->get();
+
     }
 
 }

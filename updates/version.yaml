@@ -55,5 +55,10 @@
     - create_yamobile_services_price.php
     - create_price_to_category.php
 4.4.1:
+    - 'Added the ability to output an array of bread crumbs for categories and services'
+    - 'Added the ability to create price lists for categories'
+    - 'Added the ability to import and export price lists to cvs'
     - 'Updated table yamobile_services_price'
     - rename_table_yamobile_services_prices.php
+4.4.2:
+    - 'Fixed the need to enter "all" in the "items" property when displaying all categories or services'

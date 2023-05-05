@@ -64,7 +64,8 @@ class CategoryComponent extends ComponentBase
         return $category;
     }
 
-    private function generateBreadcrumbs(){
+    private function generateBreadcrumbs(): array
+    {
 
         $arBreadcrumbs = array();
 

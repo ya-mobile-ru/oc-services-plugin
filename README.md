@@ -16,11 +16,12 @@ To uninstall this plugin:
 php artisan plugin:remove Yamobile.Services
 ```
 
+
 ## Using components
 
-This plugin provides 4 components — `CategoryComponent`,`CategoriesComponent`,`ServiceComponent`,`ServicesComponent`.
+This plugin provides 5 components — `CategoryComponent`,`CategoriesComponent`,`ServiceComponent`,`ServicesComponent`,`SettingsComponent`.
 All Components allow you to output information about categories or services to your template.
-Categories and services added to the backend panel of your site will be available in the  twig template.
+Categories, Services and Prices added to the backend panel of your site will be available in the twig template.
 
 
 ### CategoriesComponent
@@ -30,7 +31,7 @@ This component supports property `items`, it is responsible for the number of ou
 
 ```Twig
 [CategoriesComponent]
-items = "all" or "need count"
+items = "" or "need count"
 ==
 
 ```
@@ -39,7 +40,7 @@ This component provides 1 variable - `categories`. If you need to display all ca
 
 ```Twig
 [CategoriesComponent]
-items = "all"
+items = ""
 ==
 
 {% for category in CategoriesComponent.categories %}
@@ -70,20 +71,34 @@ items = "6"
 {{ CategoriesComponent.categories.render | raw }}
 ```
 
+
+
+
 ### CategoryComponent
 
-This component allows you to output information from the backend to your Twig template to display a specific category by url. This component supports the `slug` property, for part of the url.
-
+This component allows you to output information from the backend to your Twig template to display a specific category by url.
+This component supports the `slug` property, for part of the url.
 To use the component, you must enter `:slug` in the page url when creating the page.
-
-This component provides 1 variable - `category`. This variable outputs all the information about the category.
-
+This component provides 2 public variable - `category`, `breadcrumbs`.
+`category` - this variable outputs all the information about the category.
+`breadcrumbs` - this variable outputs an array with a link and the name of the current category.
 
 ```Twig
 [CategoryComponent]
 slug = "{{ :slug }}"
 ==
+
 {% set category = CategoryComponent.category %}
+{% set breadcrumbs = CategoryComponent.breadcrumbs %}
+
+
+{% for breadcrumb_item in breadcrumbs %}
+   {% if breadcrumb_item.link %}
+        <a href="{{ breadcrumb_item.link }}">{{ breadcrumb_item.name }}</a>
+   {% else %}
+        <span>{{ breadcrumb_item.name }}</span>
+   {% endif %}
+{% endfor %}
 
 {{ category.meta_title }}
 {{ category.desctiption }}
@@ -103,7 +118,7 @@ slug = "{{ :slug }}"
 {% set category = CategoryComponent.category %}
 
 <ul>
-    {% for service in category.service %}
+    {% for service in category.services %}
         <li>
             <a href="{{'home' | page}}/{{ service.slug }}/{{service.slug}}">{{ subservice.name }}</a>
         </li>
@@ -112,25 +127,44 @@ slug = "{{ :slug }}"
 
 ```
 
+The category has the ability to link price lists to display within the category.
+Price lists can be created manually or imported via a csv file.
 
+```Twig
+[CategoryComponent]
+slug = "{{ :slug }}"
+==
+{% set category = CategoryComponent.category %}
+
+<ul>
+    {% for price in category.prices %}
+        <li>
+            {{ price.name }} - {{ price.price }}
+        </li>
+    {% endfor %}
+</ul>   
+```
 
 
 ### ServicesComponent
 
-This component allows you to output information from the backend to your twig template in any form convenient for you. This component supports the `items` property, it is responsible for the number of output services.
+This component allows you to output information from the backend to your twig template in any form convenient for you.
+This component supports the `items` property, it is responsible for the number of output services.
 
 ```Twig
 [ServicesComponent]
-items = "all"
+items = "" or "need count"
 ==
 
 ```
 
-This component provides 1 variable - `services`. If you need to display all services, then enter assign to the `items` value the value of `all`, if only a certain number, then enter the required number of records.
+This component provides 1 variable - `services`.
+If you need to display all services, then enter assign `items` an empty value,
+if only a certain number, then enter the required number of records.
 
 ```Twig
 [ServicesComponent]
-items = "all"
+items = ""
 ==
 
 {% for service in ServicesComponent.services %}
@@ -163,19 +197,32 @@ items = "6"
 ### ServiceComponent
 
 
-This component allows you to output information from the backend to your twig template to display a specific service by the `slug` property. This component supports the properties - `slug`, `category_slug'.
-
+This component allows you to output information from the backend
+to your twig template to display a specific service by the `slug` property.
+This component supports the properties - `slug`, `category_slug`.
 To use the component, you must enter `:category_slug/:slug` in the page url when creating the page.
+This component provides 2 public variable - `service`, `breadcrumbs`.
+`service` - this variable outputs all the information about the service.
+`breadcrumbs` - this variable outputs an array with a link and the name of the current category.
 
-This component provides 1 variable - `service`. This variable outputs all the information about the service.
 
 ```Twig
 [ServiceComponent]
 category_slug = "{{ :category_slug }}"
 slug = "{{ :slug }}"
-
 ==
+
 {% set service = ServiceComponent.service %}
+{% set breadcrumbs = ServiceComponent.breadcrumbs %}
+
+
+{% for breadcrumb_item in breadcrumbs %}
+   {% if breadcrumb_item.link %}
+        <a href="{{ breadcrumb_item.link }}">{{ breadcrumb_item.name }}</a>
+   {% else %}
+        <span>{{ breadcrumb_item.name }}</span>
+   {% endif %}
+{% endfor %}
 
 {{ service.meta_title }}
 {{ service.desctiption }}
@@ -185,7 +232,8 @@ slug = "{{ :slug }}"
 {{ service.content }}
 
 ```
-Just like the category has access to all the linked services. The service has access to all the properties of the parent category.
+Just like the category has access to all the linked services.
+The service has access to all the properties of the parent category.
 
 ```Twig
 [ServiceComponent]
@@ -199,3 +247,29 @@ slug = "{{ :slug }}"
 
 
 ```
+
+
+### ServiceSettings
+
+This component provides 1 public variable - `settings`.
+`settings` - this variable outputs all the information from settings plugin.
+
+It can be used for the main page of services.
+In the settings, you can enter the page metadata,
+an image and a description of the page.
+
+```Twig
+meta_title = {{ service_settings.meta_title }}
+meta_description = {{ service_settings.meta_description }}
+
+[ServiceSettings]
+==
+
+{% set service_settings = ServiceSettings.settings %}
+
+<h1>{{ service_settings.h1 }}</h1>
+<p>{{ service_settings.description }}</p>
+<img src="{{ service_settings.image |media }}" />
+```
+
+

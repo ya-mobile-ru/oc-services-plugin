@@ -63,7 +63,8 @@ class ServiceComponent extends ComponentBase
         return $service;
     }
 
-    private function generateBreadcrumbs(){
+    private function generateBreadcrumbs(): array
+    {
 
         $arBreadcrumbs = array();
 
