@@ -1,4 +1,4 @@
-# Services plugin
+# Services
 
 Simple plugin for publishing company services for October CMS.
 
