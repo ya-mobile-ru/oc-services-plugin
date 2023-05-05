@@ -51,7 +51,7 @@
             'label' => 'Content'
         ],
         'meta' => [
-            'seo_name' => [
+            'h1' => [
                 'label' => 'H1 Header',
                 'placeholder' => 'Enter the H1 header for SEO'
             ],
