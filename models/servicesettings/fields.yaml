@@ -9,9 +9,9 @@ fields:
         size: huge
         span: full
         type: textarea
-    seo_name:
-        label: 'yamobile.services::lang.services.meta.seo_name.label'
-        placeholder: 'yamobile.services::lang.services.meta.seo_name.placeholder'
+    h1:
+        label: 'yamobile.services::lang.services.meta.h1.label'
+        placeholder: 'yamobile.services::lang.services.meta.h1.placeholder'
         span: auto
         type: text
     meta_title:
