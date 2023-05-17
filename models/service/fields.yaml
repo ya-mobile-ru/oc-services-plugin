@@ -34,6 +34,11 @@ fields:
             field: name
             type: slug
         type: text
+    description:
+        label: 'yamobile.services::lang.services.description.label'
+        placeholder: 'yamobile.services::lang.services.description.placeholder'
+        type: text
+        span: auto
 tabs:
     fields:
         image:
