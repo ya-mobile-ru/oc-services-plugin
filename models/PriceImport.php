@@ -22,43 +22,41 @@ class PriceImport extends ImportModel
 
             try {
 
-                $price = Price::find(array_get($data, 'id'));
-
-                if (empty($price)) {
-
-                    //  Если такого id не существует, то создать новое поле и записать данные
-
-                    $price = Price::make();
-
-                    $price->fill($data);
 
 
-//                    $except = ['id'];
-//
-//                    foreach (array_except($data, $except) as $attribute => $value) {
-//                        $price->{$attribute} = $value ?: null;
-//                    }
-
-                    $price->save();
-
-                    $this->logCreated();
-
-                }else{
-
-                    $price = Price::find(array_get($data, 'id'));
-
-                    $except = ['id'];
-
-                    foreach (array_except($data, $except) as $attribute => $value) {
-                        $price->update([$attribute => $value]);
+                if(array_key_exists('id', $data)){
+                    $price = Price::find(array_get($data, 'id') );
+                    $dataPrice = [];
+                    foreach ($data as $attribute => $value) {
+                        $dataPrice[] = [
+                            $attribute => $value
+                        ];
                     }
-
-                    $price->save();
-
-                    $this->logUpdated();
-
+                    $price->update($dataPrice);
+                } else {
+                    $price = Price::create($data);
                 }
 
+
+                $category_data = (!empty(array_get($data, 'categories'))) ? array_get($data, 'categories') : false;
+
+                $categoryModel =  null;
+
+                if($category_data){
+                    $categoryModel = Category::where('name', $category_data)->first();
+                    if(!$categoryModel){
+                        $categoryModel = Category::create(['name' => $category_data]);
+                    }
+
+                    $price->categories()->attach($categoryModel->id, ['price_id' => $price->id]);
+                }
+
+
+                if (array_key_exists('id', $data)) {
+                    $this->logUpdated();
+                } else {
+                    $this->logCreated();
+                }
 
             }
             catch (\Exception $ex) {
