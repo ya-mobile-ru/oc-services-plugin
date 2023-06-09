@@ -30,4 +30,3 @@ fields:
         placeholder: 'yamobile.services::lang.services.meta.description.placeholder'
         span: full
         type: text
-
