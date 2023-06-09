@@ -4,7 +4,6 @@ namespace Yamobile\Services\Models;
 
 use October\Rain\Database\Model;
 
-
 class PriceSettings extends Model
 {
 
