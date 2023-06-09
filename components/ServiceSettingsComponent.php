@@ -12,8 +12,8 @@ class ServiceSettingsComponent extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'Настройки услуг',
-            'description' => 'Описание настроек услуг'
+            'name' => 'yamobile.services::lang.components.service_settings.name',
+            'description' => 'yamobile.services::lang.components.service_settings.description'
         ];
     }
 
@@ -22,7 +22,7 @@ class ServiceSettingsComponent extends ComponentBase
         $this->settings = $this->getServicesSettings();
     }
 
-    public function getServicesSettings()
+    private function getServicesSettings()
     {
         return [
             'image' => ServiceSettings::get('image'),

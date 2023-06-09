@@ -23,15 +23,24 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
         return [
-            'location' => [
+            'service' => [
                 'label' => 'yamobile.services::lang.settings.service.label',
                 'description' => 'yamobile.services::lang.settings.service.description',
-                'category' => 'yamobile.services::lang.settings.service.category',
+                'category' => 'yamobile.services::lang.settings.category',
                 'icon' => 'icon-folder',
                 'class' => \Yamobile\Services\Models\ServiceSettings::class,
                 'order' => 500,
                 'keywords' => 'yamobile.services::lang.settings.service.keywords'
-            ]
+            ],
+            'price' => [
+                'label' => 'yamobile.services::lang.settings.price.label',
+                'description' => 'yamobile.services::lang.settings.price.description',
+                'category' => 'yamobile.services::lang.settings.category',
+                'icon' => 'icon-money',
+                'class' => \Yamobile\Services\Models\PriceSettings::class,
+                'order' => 500,
+                'keywords' => 'yamobile.services::lang.settings.price.keywords'
+            ],
         ];
     }
 
@@ -43,6 +52,7 @@ class Plugin extends PluginBase
             \Yamobile\Services\Components\ServicesComponent::class => 'ServicesComponent',
             \Yamobile\Services\Components\ServiceComponent::class => 'ServiceComponent',
             \Yamobile\Services\Components\ServiceSettingsComponent::class => 'ServiceSettings',
+            \Yamobile\Services\Components\PriceSettingsComponent::class => 'PriceSettings',
 
         ];
 

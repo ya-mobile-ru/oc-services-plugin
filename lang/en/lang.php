@@ -99,11 +99,16 @@
         ]
     ],
     'settings' => [
+        'category'=> 'Service Settings',
         'service' => [
-            'label' => 'Home page of services',
+            'label' => 'Main services',
             'description' => 'Changing the data of the main page of all services.',
-            'category' => 'Content',
             'keywords' => 'services, categories of services'
+        ],
+        'price' => [
+            'label' => 'Main price',
+            'description' => 'Changing the data of the main page of price lists.',
+            'keywords' => 'services,price lists,price list page'
         ]
     ],
     'components' => [
@@ -150,8 +155,15 @@
                     'description' => 'The parameter is responsible for the number of output records, if you need to output all, write - all.'
                 ]
             ]
+        ],
+        'service_settings'=>[
+            'name'=> 'Service Settings',
+            'description' => 'A component for displaying the settings of the main page of services in your template.'
+        ],
+        'price_settings'=>[
+            'name'=> 'Price settings',
+            'description' => 'A component for displaying the settings of the main price list page in your template.'
         ]
-
     ],
     'system' => [
         'no_data' => 'No data available'
