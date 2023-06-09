@@ -63,4 +63,7 @@
 4.4.2:
     - 'Fixed the need to enter "all" in the "items" property when displaying all categories or services'
 4.5.0:
+    - 'Add description to services'
+    - add_description_to_services.php
+4.6.0:
     - 'Add price settings'
