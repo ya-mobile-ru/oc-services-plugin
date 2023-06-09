@@ -27,7 +27,7 @@ class PriceSettingsComponent extends ComponentBase
         return [
             'image' => PriceSettings::get('image'),
             'description' => PriceSettings::get('description'),
-            'heading    ' => PriceSettings::get('heading'),
+            'heading' => PriceSettings::get('heading'),
             'meta_title' => PriceSettings::get('meta_title'),
             'meta_keywords' => PriceSettings::get('meta_keywords'),
             'meta_description' => PriceSettings::get('meta_description'),
