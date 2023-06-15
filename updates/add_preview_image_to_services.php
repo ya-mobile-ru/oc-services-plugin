@@ -5,19 +5,19 @@ namespace Yamobile\Services\Updates;
 use October\Rain\Database\Updates\Migration;
 use Schema;
 
-class AddEnabledToYamobileServicesServices extends Migration
+class AddPreviewImageToServices extends Migration
 {
     public function up()
     {
         Schema::table('yamobile_services_services', function ($table) {
-            $table->boolean('is_enabled')->default(1);
+            $table->string('preview_image')->nullable();
         });
     }
 
     public function down()
     {
         Schema::table('yamobile_services_services', function ($table) {
-            $table->dropColumn(['is_enabled']);
+            $table->dropColumn(['preview_image']);
         });
     }
 }

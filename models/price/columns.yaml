@@ -11,6 +11,11 @@ columns:
     price:
         label: 'yamobile.services::lang.services.price.label'
         type: text
+    categories:
+        label: 'yamobile.services::lang.services.categories.label'
+        relation: categories
+        type: text
+        select: name
     is_enabled:
         label: 'yamobile.services::lang.services.is_enabled.label'
         type: switch

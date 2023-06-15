@@ -67,3 +67,8 @@
     - add_description_to_services.php
 4.6.0:
     - 'Add price settings'
+4.7.0:
+    - 'Added output of related categories in the list of all price lists'
+    - 'Added preview image to categories and services'
+    - add_preview_image_to_services.php
+    - add_preview_image_to_category.php

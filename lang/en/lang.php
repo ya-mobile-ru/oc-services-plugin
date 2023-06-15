@@ -16,7 +16,7 @@
             'meta' => 'Meta-data'
         ],
         'id' =>[
-          'label' => 'ID'
+            'label' => 'ID'
         ],
         'name'=> [
             'label'=>'Name',
@@ -45,7 +45,12 @@
             'placeholder'=>'Enter a short description',
         ],
         'image' => [
-            'label' => 'Image'
+            'label' => 'Image',
+            'comment' => 'Image for the detailed page'
+        ],
+        'preview_image' => [
+            'label' => 'Preview image',
+            'comment' => 'Image for the list'
         ],
         'content' => [
             'label' => 'Content'
@@ -167,5 +172,5 @@
     ],
     'system' => [
         'no_data' => 'No data available'
-]
+    ]
 ];
