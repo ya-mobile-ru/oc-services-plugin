@@ -3,6 +3,7 @@
 namespace Yamobile\Services\Models;
 
 use Backend\Models\ExportModel;
+use Illuminate\Support\Facades\Log;
 
 class PriceExport extends ExportModel
 {
@@ -11,8 +12,12 @@ class PriceExport extends ExportModel
 
         $price = Price::all();
         $price->each(function($price) use ($columns) {
+            $categories = $price->categories;
+            $price->categories = $categories->implode('name', ';');
             $price->addVisible($columns);
+            dd($columns);
         });
+//        Log::error($price);
 
         return $price->toArray();
     }
