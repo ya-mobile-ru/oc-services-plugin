@@ -1,0 +1,17 @@
+<span>
+    <?php if ($value): ?>
+        <? if(count($value) > 1): ?>
+                <? foreach($value as $index => $item): ?>
+                        <? if(count($value) === ($index + 1)): ?>
+                            <?= $item->name ?>
+                        <? else: ?>
+                            <?= $item->name ?>;
+                        <? endif?>
+                <? endforeach ?>
+        <? else: ?>
+            <?= $value[0]->name ?>
+        <? endif ?>
+    <?php else: ?>
+            <?= e(trans('yamobile.services::lang.system.no_data')) ?>
+    <?php endif ?>
+</span>
