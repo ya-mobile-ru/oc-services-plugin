@@ -13,9 +13,9 @@ columns:
         type: text
     categories:
         label: 'yamobile.services::lang.services.categories.label'
-        nameFrom: name
-        path: $/yamobile/services/partials/_column-relation.htm
-        type: partial
+        relation: categories
+        type: text
+        select: name
     is_enabled:
         label: 'yamobile.services::lang.services.is_enabled.label'
         type: switch
