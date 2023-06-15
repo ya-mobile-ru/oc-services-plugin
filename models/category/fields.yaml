@@ -32,9 +32,18 @@ tabs:
     fields:
         image:
             label: 'yamobile.services::lang.services.image.label'
+            commentAbove: 'yamobile.services::lang.services.image.comment'
             mode: image
             span: auto
             imageWidth: '200'
+            type: mediafinder
+            tab: 'yamobile.services::lang.services.tabs.main'
+        preview_image:
+            label: 'yamobile.services::lang.services.preview_image.label'
+            commentAbove: 'yamobile.services::lang.services.preview_image.comment'
+            mode: image
+            imageWidth: '200'
+            span: auto
             type: mediafinder
             tab: 'yamobile.services::lang.services.tabs.main'
         description:
