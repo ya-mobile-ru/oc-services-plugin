@@ -1,6 +1,10 @@
 columns:
     image:
-        label: 'yamobile.services::lang.services.image.label'
+        label: 'yamobile.services::lang.services.preview_image.label'
+        path: $/yamobile/services/partials/_column-image.htm
+        type: partial
+    preview_image:
+        label: 'yamobile.services::lang.services.preview_image.label'
         path: $/yamobile/services/partials/_column-image.htm
         type: partial
     id:
