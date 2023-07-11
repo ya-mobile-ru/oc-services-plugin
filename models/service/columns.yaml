@@ -37,4 +37,3 @@ columns:
     updated_at:
         label: 'yamobile.services::lang.services.updated_at'
         type: datetime
-

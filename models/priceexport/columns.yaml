@@ -6,4 +6,3 @@ columns:
   is_enabled: 'yamobile.services::lang.services.is_enabled.label'
   created_at: 'yamobile.services::lang.services.created_at'
   updated_at: 'yamobile.services::lang.services.updated_at'
-
