@@ -17,7 +17,7 @@ class PriceImport extends ImportModel
         'name'    => 'required',
     ];
 
-    public function importData(array $results, $sessionKey = null): Price
+    public function importData(array $results, $sessionKey = null): void
     {
         $firstRow = reset($results);
 
@@ -71,4 +71,3 @@ class PriceImport extends ImportModel
         }
     }
 }
-
