@@ -9,9 +9,10 @@ use Yamobile\Services\Models\PriceSettings;
 
 class PriceSettingsComponent extends ComponentBase
 {
+
     public array $settings;
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'yamobile.services::lang.components.price_settings.name',
@@ -19,7 +20,7 @@ class PriceSettingsComponent extends ComponentBase
         ];
     }
 
-    public function onRun()
+    public function onRun(): void
     {
         $this->settings = $this->getPricesSettings();
     }

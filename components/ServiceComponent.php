@@ -11,11 +11,11 @@ use Yamobile\Services\Models\Category;
 class ServiceComponent extends ComponentBase
 {
 
-    public $service;
-    public $breadcrumbs;
+    public Service $service;
+    public array $breadcrumbs;
 
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'yamobile.services::lang.components.service.name',
@@ -23,7 +23,7 @@ class ServiceComponent extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [
             'category_slug' => [
@@ -46,7 +46,7 @@ class ServiceComponent extends ComponentBase
 
         $this->service = $this->loadService();
 
-        if(!$this->service || ($this->service->category['slug'] !== $this->property('category_slug'))) {
+        if($this->isServiceCategory()) {
             $this->setStatusCode(404);
             return $this->controller->run('404');
         }
@@ -55,37 +55,44 @@ class ServiceComponent extends ComponentBase
     }
 
 
-    private function loadService()
+    private function loadService(): Service
     {
-
-        $service = Service::where('slug', $this->property('slug'))
+        return Service::where('slug', $this->property('slug'))
             ->where('is_enabled', true)
             ->first();
-
-        return $service;
     }
 
     private function generateBreadcrumbs(): array
     {
 
-        $arBreadcrumbs = array();
-
         $service = $this->loadService();
 
         $category = $service->category;
 
-        $arBreadcrumbs[] = [
-            'name' => $category->name,
-            'link' => $category->slug
+        return [
+            [
+                'name' => $category->name,
+                'link' => $category->slug
+            ],
+            [
+                'name' => $service->name,
+                'link' => false
+            ]
         ];
 
-        $arBreadcrumbs[] = [
-            'name' => $service->name,
-            'link' => false
-        ];
+    }
 
-        return $arBreadcrumbs;
+    private function isServiceCategory(): bool
+    {
+        if (!$this->service){
+            return false;
+        }
 
+        if($this->service->category['slug'] !== $this->property('category_slug')){
+            return false;
+        }
+
+        return true;
     }
 
 }

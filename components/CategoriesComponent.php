@@ -10,10 +10,10 @@ use Yamobile\Services\Models\Category;
 class CategoriesComponent extends ComponentBase
 {
 
-    public $categories;
+    public Category $categories;
 
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'yamobile.services::lang.components.categories.name',
@@ -21,7 +21,7 @@ class CategoriesComponent extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [
             'items' => [
@@ -33,7 +33,7 @@ class CategoriesComponent extends ComponentBase
     }
 
 
-    public function onRun()
+    public function onRun(): void
     {
 
         $this->categories = $this->loadCategories();
@@ -41,7 +41,7 @@ class CategoriesComponent extends ComponentBase
     }
 
 
-    private function loadCategories()
+    private function loadCategories(): Category
     {
 
         $items = $this->property('items');
@@ -55,5 +55,4 @@ class CategoriesComponent extends ComponentBase
         return $categories->get();
 
     }
-
 }

@@ -52,5 +52,4 @@ class ServicesComponent extends ComponentBase
         return $services->get();
 
     }
-
 }

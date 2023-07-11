@@ -9,9 +9,9 @@ use Yamobile\Services\Models\ServiceSettings;
 
 class ServiceSettingsComponent extends ComponentBase
 {
-    public $settings;
+    public array $settings;
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'yamobile.services::lang.components.service_settings.name',
@@ -19,12 +19,12 @@ class ServiceSettingsComponent extends ComponentBase
         ];
     }
 
-    public function onRun()
+    public function onRun(): void
     {
         $this->settings = $this->getServicesSettings();
     }
 
-    private function getServicesSettings()
+    private function getServicesSettings(): array
     {
         return [
             'image' => ServiceSettings::get('image'),

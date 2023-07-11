@@ -11,10 +11,10 @@ use Yamobile\Services\Models\Category;
 class CategoryComponent extends ComponentBase
 {
 
-    public $category;
-    public $breadcrumbs;
+    public Category $category;
+    public array $breadcrumbs;
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'yamobile.services::lang.components.category.name',
@@ -23,7 +23,7 @@ class CategoryComponent extends ComponentBase
     }
 
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [
             'slug' => [
@@ -36,47 +36,47 @@ class CategoryComponent extends ComponentBase
     }
 
 
-    public function onRun()
+    public function onRun(): string
     {
 
         $this->category = $this->loadCategory();
 
-        if(!$this->category){
+        if($this->isCategory()){
             $this->setStatusCode(404);
             return $this->controller->run('404');
         }
 
         $this->breadcrumbs = $this->generateBreadcrumbs();
-
-
     }
 
 
-    private function loadCategory()
+    private function loadCategory(): Category
     {
         $slug = $this->property('slug');
 
-        $category = Category::where('slug',$slug)
+        return Category::where('slug',$slug)
             ->where('is_enabled', true)
             ->first();
-
-        return $category;
     }
 
     private function generateBreadcrumbs(): array
     {
 
-        $arBreadcrumbs = array();
-
         $category = $this->loadCategory();
 
-        $arBreadcrumbs[] = [
+        return [
             'name' => $category->name,
             'link' => false
         ];
 
-        return $arBreadcrumbs;
-
     }
 
+    private function isCategory(): bool
+    {
+        if (!$this->category){
+            return false;
+        }
+
+        return true;
+    }
 }
