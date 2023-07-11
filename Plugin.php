@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Yamobile\Services;
 
 use System\Classes\PluginBase;
@@ -9,7 +11,7 @@ use Backend;
 class Plugin extends PluginBase
 {
 
-    public function pluginDetails()
+    public function pluginDetails(): array
     {
         return [
             'name' => 'yamobile.services::lang.plugin.name',
@@ -20,7 +22,7 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function registerSettings()
+    public function registerSettings(): array
     {
         return [
             'service' => [
@@ -44,7 +46,7 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function registerComponents()
+    public function registerComponents(): array
     {
         return [
             \Yamobile\Services\Components\CategoriesComponent::class => 'CategoriesComponent',
