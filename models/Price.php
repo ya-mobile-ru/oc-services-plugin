@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Yamobile\Services\Models;
 
 use Model;
-
 
 class Price extends Model
 {
@@ -14,10 +15,11 @@ class Price extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'yamobile_services_prices';
+    public string $table = 'yamobile_services_prices';
 
 
-    public $belongsToMany = [
+
+    public array $belongsToMany = [
         'categories' => [
             \Yamobile\Services\Models\Category::class,
             'table' => 'yamobile_price_to_categories',

@@ -6,7 +6,7 @@ use Backend\Models\ExportModel;
 
 class PriceExport extends ExportModel
 {
-    public function exportData($columns, $sessionKey = null)
+    public function exportData($columns, $sessionKey = null): Price
     {
 
         $price = Price::all();

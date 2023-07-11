@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Yamobile\Services\Models;
 
 use Model;
@@ -10,9 +12,9 @@ class Category extends Model
 
     use \October\Rain\Database\Traits\Sortable;
 
-    public $table = 'yamobile_services_categories';
+    public string $table = 'yamobile_services_categories';
 
-    public $hasMany = [
+    public array $hasMany = [
         'services' => [
             Service::class,
             'order' => 'name',
@@ -20,7 +22,7 @@ class Category extends Model
         ]
     ];
 
-    public $belongsToMany = [
+    public array $belongsToMany = [
         'prices' => [
                 \Yamobile\Services\Models\Price::class,
                 'table' => 'yamobile_price_to_categories',

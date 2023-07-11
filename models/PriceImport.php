@@ -7,14 +7,17 @@ use Backend\Models\ImportModel;
 class PriceImport extends ImportModel
 {
 
-    public $table = 'yamobile_services_prices';
+    public string $table = 'yamobile_services_prices';
 
 
-    protected $rules = [
+    /**
+     * @var array|string[]
+     */
+    protected array $rules = [
         'name'    => 'required',
     ];
 
-    public function importData($results, $sessionKey = null)
+    public function importData(array $results, $sessionKey = null): Price
     {
         $firstRow = reset($results);
 

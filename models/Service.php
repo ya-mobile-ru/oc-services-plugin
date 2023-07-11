@@ -1,21 +1,21 @@
 <?php
 
+declare(strict_types = 1);
 
 namespace Yamobile\Services\Models;
 
 use Model;
 use Yamobile\Services\Models\Category;
 
-
 class Service extends Model
 {
 
     use \October\Rain\Database\Traits\Sortable;
 
-    public $table = 'yamobile_services_services';
+    public string $table = 'yamobile_services_services';
 
 
-    public $belongsTo = [
+    public array $belongsTo = [
         'category' => Category::class,
     ];
 }
