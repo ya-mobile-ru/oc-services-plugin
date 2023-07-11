@@ -1,18 +1,18 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Yamobile\Services\Components;
 
 use Cms\Classes\ComponentBase;
 use Yamobile\Services\Models\Service;
 
-
-
 class ServicesComponent extends ComponentBase
 {
 
-    public $services;
+    public Service $services;
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'yamobile.services::lang.components.services.name',
@@ -20,7 +20,7 @@ class ServicesComponent extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [
             'items' => [
@@ -31,14 +31,14 @@ class ServicesComponent extends ComponentBase
         ];
     }
 
-    public function onRun()
+    public function onRun(): void
     {
 
         $this->services = $this->loadServices();
 
     }
 
-    private function loadServices()
+    private function loadServices(): Service
     {
 
         $items = $this->property('items');

@@ -1,11 +1,11 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Yamobile\Services\Components;
 
 use Cms\Classes\ComponentBase;
 use Yamobile\Services\Models\Category;
-
-
 
 class CategoriesComponent extends ComponentBase
 {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Yamobile\Services\Components;
 
 use Cms\Classes\ComponentBase;
@@ -7,7 +9,7 @@ use Yamobile\Services\Models\PriceSettings;
 
 class PriceSettingsComponent extends ComponentBase
 {
-    public $settings;
+    public array $settings;
 
     public function componentDetails()
     {
@@ -22,7 +24,7 @@ class PriceSettingsComponent extends ComponentBase
         $this->settings = $this->getPricesSettings();
     }
 
-    private function getPricesSettings()
+    private function getPricesSettings(): array
     {
         return [
             'image' => PriceSettings::get('image'),
