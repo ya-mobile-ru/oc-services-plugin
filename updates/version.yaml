@@ -72,3 +72,7 @@
     - 'Added preview image to categories and services'
     - add_preview_image_to_services.php
     - add_preview_image_to_category.php
+4.8.0:
+    - 'Added heading property for categories pages and services pages'
+    - add_h1_to_categories.php
+    - add_h1_to_services.php
