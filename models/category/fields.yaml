@@ -66,6 +66,12 @@ tabs:
             span: full
             type: richeditor
             tab: 'yamobile.services::lang.services.tabs.main'
+        h1:
+            label: 'yamobile.services::lang.services.meta.h1.label'
+            placeholder: 'yamobile.services::lang.services.meta.h1.placeholder'
+            span: auto
+            type: text
+            tab: 'yamobile.services::lang.services.tabs.meta'
         meta_title:
             label: 'yamobile.services::lang.services.meta.title.label'
             placeholder: 'yamobile.services::lang.services.meta.title.placeholder'
